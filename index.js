@@ -22,12 +22,17 @@ program.version('1.0.0', '-v, --version')
                 {
                     name: 'author',
                     message: '请输入作者名称：'
+                },
+                {
+                    name: 'template',
+                    message: '请输入模板类型（main/child）：'
                 }
             ]).then((answers) => {
                 const spinner = ora('正在下载模板...');
                 spinner.start();
-                const template_pc  = 'https://github.com:Ostask/qiankun-child#main';
-                const TEMPLATE = template_pc;
+                const template_main  = 'https://github.com:Ostask/qiankun-main#main';
+                const template_child = 'https://github.com:Ostask/qiankun-child#main';
+                const TEMPLATE = answers.template === 'main'? template_main:template_child
                 download(TEMPLATE, name, {clone: true}, (err) => {
                     if(err){
                         spinner.fail();

@@ -1,6 +1,6 @@
 {
   "name": "daodao-qiankun-cli",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "一个基于vue+qiankun的脚手架工具,创建子应用",
   "main": "index.js",
   "scripts": {
